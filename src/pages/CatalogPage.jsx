@@ -1,7 +1,12 @@
-import React from "react";
+import SideBar from "../components/SideBar/SideBar";
 
 const CatalogPage = () => {
-  return <div>CatalogPage</div>;
+  return (
+    <div>
+      CatalogPage
+      <SideBar />
+    </div>
+  );
 };
 
 export default CatalogPage;

@@ -10,21 +10,19 @@ const FavoritesPage = lazy(() => import("./pages/FavoritesPage"));
 
 function App() {
   return (
-    <div>
-      <Container>
-        <Navigation />
-        <main>
-          <Suspense>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/catalog" element={<CatalogPage />} />
-              <Route path="/favorites" element={<FavoritesPage />} />
-              <Route path="*" element={<HomePage replace />} />
-            </Routes>
-          </Suspense>
-        </main>
-      </Container>
-    </div>
+    <Container>
+      <Navigation />
+      <main>
+        <Suspense>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/catalog" element={<CatalogPage />} />
+            <Route path="/favorites" element={<FavoritesPage />} />
+            <Route path="*" element={<HomePage replace />} />
+          </Routes>
+        </Suspense>
+      </main>
+    </Container>
   );
 }
 
