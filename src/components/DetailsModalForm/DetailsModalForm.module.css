@@ -46,6 +46,19 @@
   transition: color 200ms linear;
 }
 
+.label {
+  position: relative;
+}
+
+.calendarIcon {
+  fill: transparent;
+  stroke: var(--black);
+  float: right;
+  position: absolute;
+  right: 18px;
+  top: 18px;
+}
+
 .textarea {
   resize: none;
   padding: 18px;

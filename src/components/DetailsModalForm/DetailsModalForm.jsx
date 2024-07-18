@@ -1,5 +1,10 @@
 import { useForm } from "react-hook-form";
+import Flatpickr from "react-flatpickr";
+import "flatpickr/dist/themes/material_red.css";
+
+import currentDate from "../../services/getData";
 import css from "./DetailsModalForm.module.css";
+import sprite from "../../assets/sprite.svg";
 
 const DetailsModalForm = () => {
   const { handleSubmit } = useForm();
@@ -16,25 +21,29 @@ const DetailsModalForm = () => {
             name="name"
             type="text"
             placeholder="Name"
+            required
           />
         </label>
-        <label className={css.label}>
+        <label>
           <input
             className={css.input}
             name="email"
             type="email"
             placeholder="Email"
+            required
           />
         </label>
         <label className={css.label}>
-          <input
+          <Flatpickr
             className={css.input}
-            type="date"
-            name="date"
             placeholder="Booking date"
+            options={{ minDate: currentDate() }}
           />
+          <svg className={css.calendarIcon} width="20" height="20">
+            <use href={`${sprite}#icon-Calendar`}></use>
+          </svg>
         </label>
-        <label className={css.label}>
+        <label>
           <textarea
             className={css.textarea}
             name="comment"
