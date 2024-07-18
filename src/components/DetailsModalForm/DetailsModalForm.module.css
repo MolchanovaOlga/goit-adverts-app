@@ -75,6 +75,12 @@
   line-height: 1.25;
 }
 
+.textarea:hover::-webkit-input-placeholder,
+.textarea:focus::-webkit-input-placeholder {
+  color: var(--black);
+  transition: color 200ms linear;
+}
+
 .sendBtn {
   background-color: var(--red);
   color: var(--white);
@@ -86,4 +92,10 @@
 .sendBtn:focus {
   background-color: var(--hover-red);
   transition: background-color 200ms linear;
+}
+
+.errorMessage {
+  display: block;
+  padding: 10px;
+  color: var(--red);
 }

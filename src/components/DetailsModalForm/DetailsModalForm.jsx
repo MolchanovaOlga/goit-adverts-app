@@ -1,13 +1,34 @@
 import { useForm } from "react-hook-form";
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/material_red.css";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
 import currentDate from "../../services/getData";
 import css from "./DetailsModalForm.module.css";
 import sprite from "../../assets/sprite.svg";
 
+const schema = yup
+  .object({
+    name: yup
+      .string()
+      .required("This field is required.")
+      .min(2)
+      .matches(/^[A-Za-z' -]$/, "Enter correct name."),
+    email: yup.string().email().required("This field is required."),
+  })
+  .required();
+
 const DetailsModalForm = () => {
-  const { handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
   const onSubmit = (data) => console.log(data);
 
   return (
@@ -21,8 +42,14 @@ const DetailsModalForm = () => {
             name="name"
             type="text"
             placeholder="Name"
-            required
+            {...register("name", {
+              required: true,
+              minLength: 2,
+            })}
           />
+          {errors.name && (
+            <span className={css.errorMessage}>{errors.name.message}</span>
+          )}
         </label>
         <label>
           <input
@@ -30,18 +57,32 @@ const DetailsModalForm = () => {
             name="email"
             type="email"
             placeholder="Email"
-            required
+            {...register("email", { required: true })}
           />
+          {errors.email && (
+            <span className={css.errorMessage}>{errors.email.message}d</span>
+          )}
         </label>
         <label className={css.label}>
           <Flatpickr
+            name="bookingDate"
             className={css.input}
             placeholder="Booking date"
             options={{ minDate: currentDate() }}
+            onChange={([date]) => {
+              setValue("bookingDate", date, { shouldValidate: true });
+            }}
           />
           <svg className={css.calendarIcon} width="20" height="20">
             <use href={`${sprite}#icon-Calendar`}></use>
           </svg>
+          <input
+            type="hidden"
+            {...register("bookingDate", { required: true })}
+          />
+          {errors.bookingDate && (
+            <span className={css.errorMessage}>This field is required</span>
+          )}
         </label>
         <label>
           <textarea
