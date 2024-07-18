@@ -2,6 +2,8 @@ import DetailsModalNavigation from "../DetailsModalNavigation/DetailsModalNaviga
 import css from "./DetailsModalContent.module.css";
 import sprite from "../../assets/sprite.svg";
 
+import FeaturesDetails from "../FeaturesDetails/FeaturesDetails";
+
 const DetailsModalContent = () => {
   return (
     <div className={css.container}>
@@ -40,6 +42,7 @@ const DetailsModalContent = () => {
         companion for those who value simplicity and functionality.
       </p>
       <DetailsModalNavigation />
+      <FeaturesDetails />
     </div>
   );
 };

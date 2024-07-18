@@ -2,6 +2,23 @@
   width: 902px;
 }
 
+.scrollContainer {
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-right: 12px;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  background-color: var(--white);
+  width: 8px;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb {
+  background-color: #d9d9d9;
+  height: 264px;
+  border-radius: 7px;
+}
+
 .title {
   color: var(--black);
   font-size: 24px;

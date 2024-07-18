@@ -4,22 +4,15 @@ import sprite from "../../assets/sprite.svg";
 
 Modal.setAppElement("#root");
 
-const ModalWrapper = ({
-  children,
-  modalIsOpen,
-  onCloseModal,
-  contentLabel,
-  top = "50%",
-  transform = "translate(-50%, -50%)",
-}) => {
+const ModalWrapper = ({ children, modalIsOpen, onCloseModal }) => {
   const customStyles = {
     content: {
-      top,
+      top: "5%",
       left: "50%",
       right: "auto",
       bottom: "auto",
       marginRight: "-50%",
-      transform,
+      transform: "translate(-50%, 0)",
       padding: "0",
       borderRadius: "15px",
     },
@@ -32,7 +25,7 @@ const ModalWrapper = ({
       isOpen={modalIsOpen}
       onRequestClose={onCloseModal}
       style={customStyles}
-      contentLabel={contentLabel}
+      contentLabel="Modal Details"
     >
       <div className={css.modalContent}>
         <button className={css.closeBtn} type="button" onClick={onCloseModal}>

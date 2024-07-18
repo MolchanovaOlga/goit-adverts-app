@@ -1,7 +1,8 @@
 .modalContent {
-  padding: 40px;
+  padding: 40px 16px 40px 40px;
   position: relative;
   background-color: var(--white);
+  max-height: 90vh;
 }
 
 .closeBtn {

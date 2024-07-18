@@ -8,10 +8,10 @@ const DetailsModalNavigation = () => {
   return (
     <div className={css.navContainer}>
       <div className={css.linkContainer}>
-        <NavLink className={css.featuresLink} to={"features"}>
+        <NavLink className={css.link} to={"features"}>
           Features
         </NavLink>
-        <NavLink className={css.reviewsLink} to={"reviews"}>
+        <NavLink className={css.link} to={"reviews"}>
           Reviews
         </NavLink>
       </div>
