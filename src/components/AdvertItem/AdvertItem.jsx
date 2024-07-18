@@ -1,3 +1,4 @@
+import ShowMoreBtn from "../ShowMoreBtn/ShowMoreBtn";
 import css from "./AdvertItem.module.css";
 import sprite from "../../assets/sprite.svg";
 
@@ -74,9 +75,7 @@ const AdvertItem = () => {
             <p>AC</p>
           </li>
         </ul>
-        <button type="button" className={css.showMoreBtn}>
-          Show more
-        </button>
+        <ShowMoreBtn />
       </div>
     </div>
   );

@@ -1,0 +1,16 @@
+.showMoreBtn {
+  background-color: var(--red);
+  height: 56px;
+  border-radius: 200px;
+  color: var(--white);
+  padding: 16px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showMoreBtn:hover,
+.showMoreBtn:focus {
+  background-color: var(--hover-red);
+  transition: background-color 200ms linear;
+}
