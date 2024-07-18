@@ -1,0 +1,63 @@
+.container {
+  width: 902px;
+}
+
+.title {
+  color: var(--black);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.revLocContainer {
+  display: flex;
+  gap: 16px;
+  color: var(--black);
+  margin-bottom: 16px;
+}
+
+.reviewsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.starIcon {
+  fill: var(--yellow);
+}
+
+.reviewsText {
+  text-decoration: underline;
+}
+
+.mapPinIcon {
+  fill: transparent;
+  stroke: var(--black);
+}
+
+.priceText {
+  color: var(--black);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.imgList {
+  margin: 24px 0;
+  display: flex;
+  gap: 16px;
+}
+
+.imgContainer {
+  overflow: hidden;
+  border-radius: 10px;
+  width: 290px;
+  height: 310px;
+  background-color: var(--light-gray);
+}
+
+.description {
+  margin-bottom: 44px;
+}

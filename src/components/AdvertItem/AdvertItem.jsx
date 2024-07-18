@@ -36,7 +36,7 @@ const AdvertItem = () => {
               <svg className={css.starIcon} width="16" height="16">
                 <use href={`${sprite}#icon-Star`}></use>
               </svg>
-              <p className={css.reviewsText}>4.4(2 Reviews)</p>
+              <p className={css.reviewsText}>4.4 (2 Reviews)</p>
             </div>
             <div className={css.reviewsContainer}>
               <svg className={css.mapPinIcon} width="16" height="16">
