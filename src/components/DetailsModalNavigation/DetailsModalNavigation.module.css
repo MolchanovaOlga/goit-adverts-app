@@ -8,7 +8,22 @@
   padding-bottom: 24px;
 }
 
+.link {
+  position: relative;
+}
+
+.link::after {
+  content: "";
+  width: 100%;
+  height: 8px;
+  background-color: var(--red);
+  display: block;
+  position: absolute;
+  margin-top: 22px;
+}
+
 .link:hover,
 .link:focus {
-  border-bottom: 5px solid var(--red);
+  color: var(--dark-gray);
+  transition: color 200ms lianer;
 }

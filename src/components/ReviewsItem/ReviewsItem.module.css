@@ -1,0 +1,45 @@
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.avatarContainer {
+  background-color: var(--main-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+}
+
+.avatarText {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--red);
+}
+
+.ratingContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
+  color: var(--black);
+}
+
+.starsContainer {
+  display: flex;
+  gap: 4px;
+}
+
+.starIcon {
+  fill: var(--main-gray);
+}
