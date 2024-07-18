@@ -5,10 +5,10 @@ import AdvertsList from "../components/AdvertsList/AdvertsList";
 const CatalogPage = () => {
   return (
     <>
-      <PageContainer />
-      <SideBar />
-      <AdvertsList />
-      <PageContainer />
+      <PageContainer>
+        <SideBar />
+        <AdvertsList />
+      </PageContainer>
     </>
   );
 };
