@@ -2,8 +2,8 @@ import DetailsModalNavigation from '../DetailsModalNavigation/DetailsModalNaviga
 import css from './DetailsModalContent.module.css';
 import sprite from '../../assets/sprite.svg';
 
-import ReviewsDetails from '../ReviewsDetails/ReviewsDetails';
 import GalleryItem from '../GalleryItem/GalleryItem';
+import FeaturesDetails from '../FeaturesDetails/FeaturesDetails';
 
 const DetailsModalContent = ({ camperDetails }) => {
   const {
@@ -61,7 +61,7 @@ const DetailsModalContent = ({ camperDetails }) => {
       )}
       <p className={css.description}>{description}</p>
       <DetailsModalNavigation camperDetails={camperDetails} />
-      <ReviewsDetails reviewsDetails={camperDetails.reviews} />
+      <FeaturesDetails camperDetails={camperDetails} />
     </div>
   );
 };
