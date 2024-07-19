@@ -1,0 +1,7 @@
+.starIcon {
+  fill: var(--main-gray);
+}
+
+.selectStarIcon {
+  fill: var(--yellow);
+}

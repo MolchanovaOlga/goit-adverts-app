@@ -35,11 +35,7 @@
   color: var(--black);
 }
 
-.starsContainer {
+.starsList {
   display: flex;
   gap: 4px;
-}
-
-.starIcon {
-  fill: var(--main-gray);
 }
