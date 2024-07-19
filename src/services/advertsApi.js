@@ -7,7 +7,10 @@ export const instance = axios.create({
 });
 
 export const getAllCampers = async () => {
-  const results = await instance.get('/adverts');
-  console.log(results);
-  return results;
+  try {
+    const results = await instance.get('/adverts');
+    return results.data;
+  } catch (er) {
+    console.log(er);
+  }
 };

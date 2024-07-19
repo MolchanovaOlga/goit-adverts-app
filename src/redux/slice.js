@@ -14,13 +14,14 @@ const handleRejected = (state, action) => {
 const advertsSlice = createSlice({
   name: 'adverts',
   initialState: { items: [], loading: false, error: null },
-
+  reducers: {},
   extraReducers: builder => {
     builder
       .addCase(getAdverts.pending, handlePending)
       .addCase(getAdverts.fulfilled, (state, action) => {
         state.loading = false;
         state.items = action.payload;
+        // console.log(action);
       })
       .addCase(getAdverts.rejected, handleRejected);
   },

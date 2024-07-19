@@ -5,9 +5,8 @@ export const getAdverts = createAsyncThunk(
   'adverts/getAll',
   async (_, thunkAPI) => {
     try {
-      const results = await getAllCampers();
-      console.log(results);
-      return results.data;
+      const data = await getAllCampers();
+      return data;
     } catch (err) {
       console.log(err);
       return thunkAPI.rejectWithValue(err.message);
