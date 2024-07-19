@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import ShowMoreBtn from "../ShowMoreBtn/ShowMoreBtn";
-import DetailsModal from "../DetailsModal/DetailsModal";
-import css from "./AdvertItem.module.css";
-import sprite from "../../assets/sprite.svg";
+import ShowMoreBtn from '../ShowMoreBtn/ShowMoreBtn';
+import DetailsModal from '../DetailsModal/DetailsModal';
+import css from './AdvertItem.module.css';
+import sprite from '../../assets/sprite.svg';
 
 const AdvertItem = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,7 +48,7 @@ const AdvertItem = () => {
           <p className={css.description}>
             Embrace simplicity and freedom with the Mavericks panel truck, an
             ideal choice for solo travelers or couples seeking a compact and
-            efficient way to explore the open roads.{" "}
+            efficient way to explore the open roads.{' '}
           </p>
           <ul className={css.detailsList}>
             <li className={css.detailsItem}>
