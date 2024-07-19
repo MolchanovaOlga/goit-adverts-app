@@ -1,21 +1,21 @@
-import { useForm } from "react-hook-form";
-import Flatpickr from "react-flatpickr";
-import "flatpickr/dist/themes/material_red.css";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import { useForm } from 'react-hook-form';
+import Flatpickr from 'react-flatpickr';
+import 'flatpickr/dist/themes/material_red.css';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 
-import currentDate from "../../services/getData";
-import css from "./DetailsModalForm.module.css";
-import sprite from "../../assets/sprite.svg";
+import currentDate from '../../services/getData';
+import css from './DetailsModalForm.module.css';
+import sprite from '../../assets/sprite.svg';
 
 const schema = yup
   .object({
     name: yup
       .string()
-      .required("This field is required.")
+      .required('This field is required.')
       .min(2)
-      .matches(/^[A-Za-z' -]$/, "Enter correct name."),
-    email: yup.string().email().required("This field is required."),
+      .matches(/^[a-zA-Zа-яА-ЯёЁіїєІЇЄ'\- ]+$/, 'Enter correct name.'),
+    email: yup.string().email().required('This field is required.'),
   })
   .required();
 
@@ -29,7 +29,10 @@ const DetailsModalForm = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = data => {
+    console.log(data);
+    window.location.reload();
+  };
 
   return (
     <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
@@ -42,7 +45,7 @@ const DetailsModalForm = () => {
             name="name"
             type="text"
             placeholder="Name"
-            {...register("name", {
+            {...register('name', {
               required: true,
               minLength: 2,
             })}
@@ -57,7 +60,7 @@ const DetailsModalForm = () => {
             name="email"
             type="email"
             placeholder="Email"
-            {...register("email", { required: true })}
+            {...register('email', { required: true })}
           />
           {errors.email && (
             <span className={css.errorMessage}>{errors.email.message}d</span>
@@ -70,7 +73,7 @@ const DetailsModalForm = () => {
             placeholder="Booking date"
             options={{ minDate: currentDate() }}
             onChange={([date]) => {
-              setValue("bookingDate", date, { shouldValidate: true });
+              setValue('bookingDate', date, { shouldValidate: true });
             }}
           />
           <svg className={css.calendarIcon} width="20" height="20">
@@ -78,7 +81,7 @@ const DetailsModalForm = () => {
           </svg>
           <input
             type="hidden"
-            {...register("bookingDate", { required: true })}
+            {...register('bookingDate', { required: true })}
           />
           {errors.bookingDate && (
             <span className={css.errorMessage}>This field is required</span>
