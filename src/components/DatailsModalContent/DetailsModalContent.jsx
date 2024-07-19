@@ -56,12 +56,12 @@ const DetailsModalContent = ({ camperDetails }) => {
         </ul>
       ) : (
         <div className={css.noImgContainer}>
-          <p className={css.text}>There are no images yet.</p>
+          <p>There are no images yet.</p>
         </div>
       )}
       <p className={css.description}>{description}</p>
-      <DetailsModalNavigation />
-      <ReviewsDetails />
+      <DetailsModalNavigation camperDetails={camperDetails} />
+      <ReviewsDetails reviewsDetails={camperDetails.reviews} />
     </div>
   );
 };

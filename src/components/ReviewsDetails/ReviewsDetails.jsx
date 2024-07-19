@@ -1,15 +1,28 @@
-import DetailsModalForm from "../DetailsModalForm/DetailsModalForm";
-import ReviewsItem from "../ReviewsItem/ReviewsItem";
-import css from "./ReviewsDetails.module.css";
+import DetailsModalForm from '../DetailsModalForm/DetailsModalForm';
+import ReviewsItem from '../ReviewsItem/ReviewsItem';
+import css from './ReviewsDetails.module.css';
 
-const ReviewsDetails = () => {
+const ReviewsDetails = ({ reviewsDetails }) => {
   return (
     <div className={css.container}>
-      <ul className={css.listReviews}>
-        <li className={css.itemReviews}>
-          <ReviewsItem />
-        </li>
-      </ul>
+      {reviewsDetails && reviewsDetails.length > 0 ? (
+        <ul className={css.listReviews}>
+          {reviewsDetails.map(item => {
+            return (
+              <li
+                className={css.itemReviews}
+                key={reviewsDetails.indexOf(item)}
+              >
+                <ReviewsItem reviewDetails={item} />
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <div className={css.noCommentsContainer}>
+          <p>There are no comments yet.</p>
+        </div>
+      )}
       <DetailsModalForm />
     </div>
   );

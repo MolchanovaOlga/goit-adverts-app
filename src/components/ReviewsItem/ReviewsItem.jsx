@@ -1,7 +1,9 @@
-import css from "./ReviewsItem.module.css";
-import sprite from "../../assets/sprite.svg";
+import css from './ReviewsItem.module.css';
+import sprite from '../../assets/sprite.svg';
 
-const ReviewsItem = () => {
+const ReviewsItem = ({ reviewDetails }) => {
+  const { reviewer_name, comment, reviewer_rating } = reviewDetails;
+
   return (
     <>
       <div className={css.titleContainer}>
@@ -9,7 +11,7 @@ const ReviewsItem = () => {
           <p className={css.avatarText}>A</p>
         </div>
         <div className={css.ratingContainer}>
-          <h4 className={css.title}>Alice</h4>
+          <h4 className={css.title}>{reviewer_name}</h4>
           <div className={css.starsContainer}>
             <svg className={css.starIcon} width="16" height="16">
               <use href={`${sprite}#icon-Star`}></use>
@@ -29,11 +31,7 @@ const ReviewsItem = () => {
           </div>
         </div>
       </div>
-      <p>
-        The Mavericks panel truck was a perfect choice for my solo road trip.
-        Compact, easy to drive, and had all the essentials. The kitchen
-        facilities were sufficient, and the overall experience was fantastic.
-      </p>
+      <p>{comment}</p>
     </>
   );
 };
