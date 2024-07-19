@@ -31,7 +31,7 @@ const AdvertsList = () => {
           })}
         </ul>
       ) : (
-        <p className={css.text}>There are no contacts in your Phonebook yet.</p>
+        <p className={css.text}>There are no adverts in app yet.</p>
       )}
     </div>
   );

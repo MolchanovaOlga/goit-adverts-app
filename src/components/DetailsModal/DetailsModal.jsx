@@ -1,13 +1,13 @@
-import DetailsModalContent from "../DatailsModalContent/DetailsModalContent";
-import ModalWrapper from "../ModalWrapper/ModalWrapper";
-import css from "./DetailsModal.module.css";
+import DetailsModalContent from '../DatailsModalContent/DetailsModalContent';
+import ModalWrapper from '../ModalWrapper/ModalWrapper';
+import css from './DetailsModal.module.css';
 
-const DetailsModal = ({ isOpen, onCloseModal }) => {
+const DetailsModal = ({ isOpen, onCloseModal, camperDetails }) => {
   return (
     <>
       <ModalWrapper modalIsOpen={isOpen} onCloseModal={onCloseModal}>
         <div className={css.scrollContainer}>
-          <DetailsModalContent />
+          <DetailsModalContent camperDetails={camperDetails} />
         </div>
       </ModalWrapper>
     </>

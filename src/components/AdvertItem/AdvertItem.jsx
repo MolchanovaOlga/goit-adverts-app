@@ -3,8 +3,12 @@ import clsx from 'clsx';
 
 import ShowMoreBtn from '../ShowMoreBtn/ShowMoreBtn';
 import DetailsModal from '../DetailsModal/DetailsModal';
+import GalleryItem from '../GalleryItem/GalleryItem';
 import css from './AdvertItem.module.css';
 import sprite from '../../assets/sprite.svg';
+import defaultImage from '../../assets/Toyota_Hilux_illustration.png';
+
+const defaultImg = `${defaultImage}`;
 
 const AdvertItem = ({ camperDetails }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,11 +40,18 @@ const AdvertItem = ({ camperDetails }) => {
   }
   return (
     <>
-      {isOpen && <DetailsModal onCloseModal={closeModal} isOpen={isOpen} />}
+      {isOpen && (
+        <DetailsModal
+          onCloseModal={closeModal}
+          isOpen={isOpen}
+          camperDetails={camperDetails}
+        />
+      )}
       <div className={css.container}>
-        <div className={css.imgContainer}>
-          <img className={css.img} src={gallery[0]} alt={`${name} image`} />
-        </div>
+        <GalleryItem
+          imgLink={gallery && gallery.length > 0 ? gallery[0] : defaultImg}
+          imgName={name}
+        />
         <div className={css.contentContainer}>
           <div className={css.titleContainer}>
             <h2 className={css.title}>{name}</h2>
