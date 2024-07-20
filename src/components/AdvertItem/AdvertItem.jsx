@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import ShowMoreBtn from '../ShowMoreBtn/ShowMoreBtn';
@@ -14,9 +14,6 @@ const defaultImg = `${defaultImage}`;
 
 const AdvertItem = ({ camperDetails }) => {
   const dispatch = useDispatch();
-
-  const [isOpen, setIsOpen] = useState(false);
-  const [isActive, setIsActive] = useState(false);
 
   const {
     _id,
@@ -35,6 +32,9 @@ const AdvertItem = ({ camperDetails }) => {
 
   const { beds, airConditioner, kitchen } = details;
 
+  const [isOpen, setIsOpen] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+
   function openModal() {
     setIsOpen(true);
     scrollController.disabledScroll();
@@ -44,6 +44,10 @@ const AdvertItem = ({ camperDetails }) => {
     setIsOpen(false);
     scrollController.enabledScroll();
   }
+
+  // useEffect(() => {
+  //   localStorage.setItem('isActive', isActive);
+  // }, [isActive]);
 
   function handleClick() {
     if (isActive) {

@@ -13,7 +13,12 @@ const handleRejected = (state, action) => {
 
 const advertsSlice = createSlice({
   name: 'adverts',
-  initialState: { items: [], favorites: [], loading: false, error: null },
+  initialState: {
+    items: [],
+    favorites: [],
+    loading: false,
+    error: null,
+  },
   reducers: {
     addAdvent(state, action) {
       state.favorites.push(action.payload);

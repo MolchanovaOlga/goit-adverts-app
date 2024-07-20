@@ -3,7 +3,6 @@ import css from './DetailsModalContent.module.css';
 import sprite from '../../assets/sprite.svg';
 
 import GalleryItem from '../GalleryItem/GalleryItem';
-import FeaturesDetails from '../FeaturesDetails/FeaturesDetails';
 
 const DetailsModalContent = ({ camperDetails }) => {
   const {
@@ -61,7 +60,6 @@ const DetailsModalContent = ({ camperDetails }) => {
       )}
       <p className={css.description}>{description}</p>
       <DetailsModalNavigation camperDetails={camperDetails} />
-      <FeaturesDetails camperDetails={camperDetails} />
     </div>
   );
 };

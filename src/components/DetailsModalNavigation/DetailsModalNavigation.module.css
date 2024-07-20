@@ -1,4 +1,4 @@
-.linkContainer {
+.navContainer {
   display: flex;
   gap: 40px;
   font-size: 20px;
@@ -8,11 +8,17 @@
   padding-bottom: 24px;
 }
 
-.link {
+.navigate {
   position: relative;
+  background-color: transparent;
 }
 
-.link::after {
+.navigateActive {
+  position: relative;
+  background-color: transparent;
+}
+
+.navigateActive::after {
   content: '';
   width: 100%;
   height: 5px;

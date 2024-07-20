@@ -11,6 +11,7 @@ const FavoritsList = () => {
   const [listAdverts, setListAdverts] = useState([]);
 
   const favorites = useSelector(selectFavorites);
+  console.log(favorites);
 
   useEffect(() => {
     setListAdverts(favorites.slice(0, perPage));
