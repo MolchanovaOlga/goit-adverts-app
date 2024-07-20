@@ -14,3 +14,12 @@ export const getAllCampers = async () => {
     console.log(er);
   }
 };
+
+export const getCamperById = async id => {
+  try {
+    const results = await instance.get(`/adverts/${id}`);
+    return results.data;
+  } catch (er) {
+    console.log(er);
+  }
+};

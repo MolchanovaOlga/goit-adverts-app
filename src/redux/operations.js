@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { getAllCampers } from '../services/advertsApi';
+import { getAllCampers, getCamperById } from '../services/advertsApi';
 
 export const getAdverts = createAsyncThunk(
   'adverts/getAll',
@@ -9,6 +9,18 @@ export const getAdverts = createAsyncThunk(
       return data;
     } catch (err) {
       console.log(err);
+      return thunkAPI.rejectWithValue(err.message);
+    }
+  }
+);
+
+export const getAdvertId = createAsyncThunk(
+  'adverts/getById',
+  async (id, thunkAPI) => {
+    try {
+      const data = await getCamperById(id);
+      return data._id;
+    } catch (err) {
       return thunkAPI.rejectWithValue(err.message);
     }
   }

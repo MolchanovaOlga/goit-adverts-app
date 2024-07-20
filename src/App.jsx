@@ -1,12 +1,12 @@
-import { Suspense, lazy } from "react";
-import { Route, Routes } from "react-router-dom";
-import Container from "./components/Container/Container";
-import Navigation from "./components/Navigation/Navigation";
-import "./App.css";
+import { Suspense, lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Container from './components/Container/Container';
+import Navigation from './components/Navigation/Navigation';
+import './App.css';
 
-const HomePage = lazy(() => import("./pages/HomePage"));
-const CatalogPage = lazy(() => import("./pages/CatalogPage"));
-const FavoritesPage = lazy(() => import("./pages/FavoritesPage"));
+const HomePage = lazy(() => import('./pages/HomePage'));
+const CatalogPage = lazy(() => import('./pages/CatalogPage'));
+const FavoritesPage = lazy(() => import('./pages/FavoritesPage'));
 
 function App() {
   return (

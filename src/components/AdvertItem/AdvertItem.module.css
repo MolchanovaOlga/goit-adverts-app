@@ -60,10 +60,19 @@
   fill: transparent;
 }
 
-.heartBtn:hover .heartBtnIcon,
-.heartBtn:focus .heartBtnIcon {
+.heartBtn:hover .heartBtnIcon {
   stroke: var(--red);
   transition: stroke 200ms linear;
+}
+
+.favoritHeatIcon {
+  fill: var(--red);
+  stroke: transparent;
+}
+
+.heartBtn:hover .favoritHeatIcon {
+  scale: 1.2;
+  transition: scale 200ms linear;
 }
 
 .revLocContainer {

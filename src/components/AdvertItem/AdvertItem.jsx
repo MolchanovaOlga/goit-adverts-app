@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import ShowMoreBtn from '../ShowMoreBtn/ShowMoreBtn';
 import DetailsModal from '../DetailsModal/DetailsModal';
 import GalleryItem from '../GalleryItem/GalleryItem';
+import { addAdvent, deleteAdvent } from '../../redux/slice.js';
 import scrollController from '../../services/noScroll';
 import css from './AdvertItem.module.css';
 import sprite from '../../assets/sprite.svg';
@@ -11,10 +13,14 @@ import defaultImage from '../../assets/Toyota_Hilux_illustration.png';
 const defaultImg = `${defaultImage}`;
 
 const AdvertItem = ({ camperDetails }) => {
+  const dispatch = useDispatch();
+
   const [isOpen, setIsOpen] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   console.log(camperDetails);
 
   const {
+    _id,
     gallery,
     name,
     price,
@@ -30,16 +36,26 @@ const AdvertItem = ({ camperDetails }) => {
 
   const { beds, airConditioner, kitchen } = details;
 
-  const camperPrice = price.toFixed(2);
-
   function openModal() {
     setIsOpen(true);
     scrollController.disabledScroll();
   }
+
   function closeModal() {
     setIsOpen(false);
     scrollController.enabledScroll();
   }
+
+  function handleClick() {
+    if (isActive) {
+      dispatch(deleteAdvent(_id));
+      setIsActive(false);
+    } else {
+      dispatch(addAdvent(camperDetails));
+      setIsActive(true);
+    }
+  }
+
   return (
     <>
       {isOpen && (
@@ -58,9 +74,17 @@ const AdvertItem = ({ camperDetails }) => {
           <div className={css.titleContainer}>
             <h2 className={css.title}>{name}</h2>
             <div className={css.priceContainer}>
-              <p>€{camperPrice}</p>
-              <button className={css.heartBtn}>
-                <svg className={css.heartBtnIcon} width="24" height="24">
+              <p>€{price.toFixed(2)}</p>
+              <button
+                className={css.heartBtn}
+                type="button"
+                onClick={handleClick}
+              >
+                <svg
+                  className={isActive ? css.favoritHeatIcon : css.heartBtnIcon}
+                  width="24"
+                  height="24"
+                >
                   <use href={`${sprite}#icon-Heart`}></use>
                 </svg>
               </button>
