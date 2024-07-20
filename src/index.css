@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap");
-@import "modern-normalize/modern-normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap');
+@import 'modern-normalize/modern-normalize.css';
 
 :root {
   --white: #ffffff;
@@ -46,6 +46,7 @@ button {
   margin: 0;
   padding: 0;
   border: none;
+  outline: none;
 }
 
 ul,

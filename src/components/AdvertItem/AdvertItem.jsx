@@ -3,6 +3,7 @@ import { useState } from 'react';
 import ShowMoreBtn from '../ShowMoreBtn/ShowMoreBtn';
 import DetailsModal from '../DetailsModal/DetailsModal';
 import GalleryItem from '../GalleryItem/GalleryItem';
+import scrollController from '../../services/noScroll';
 import css from './AdvertItem.module.css';
 import sprite from '../../assets/sprite.svg';
 import defaultImage from '../../assets/Toyota_Hilux_illustration.png';
@@ -33,9 +34,11 @@ const AdvertItem = ({ camperDetails }) => {
 
   function openModal() {
     setIsOpen(true);
+    scrollController.disabledScroll();
   }
   function closeModal() {
     setIsOpen(false);
+    scrollController.enabledScroll();
   }
   return (
     <>
