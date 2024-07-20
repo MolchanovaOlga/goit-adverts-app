@@ -15,7 +15,7 @@ const AdvertsList = ({ list }) => {
           })}
         </ul>
       ) : (
-        <p className={css.text}>There are no adverts in app yet.</p>
+        <p className={css.text}>There are no adverts yet.</p>
       )}
     </div>
   );

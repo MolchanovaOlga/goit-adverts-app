@@ -33,6 +33,6 @@
 }
 
 .link:hover {
-  color: var(--black);
+  color: var(--red);
   transition: color 200ms linear;
 }
