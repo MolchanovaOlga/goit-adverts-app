@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import clsx from 'clsx';
 
 import ShowMoreBtn from '../ShowMoreBtn/ShowMoreBtn';
 import DetailsModal from '../DetailsModal/DetailsModal';
@@ -101,10 +100,7 @@ const AdvertItem = ({ camperDetails }) => {
               <p className={css.detailsText}>{engine}</p>
             </li>
             <li
-              className={clsx(
-                'detailsItem',
-                kitchen > 0 ? css.detailsItem : css.disableDetailsItem
-              )}
+              className={kitchen > 0 ? css.detailsItem : css.disableDetailsItem}
             >
               <svg className={css.detailIcon} width="20" height="20">
                 <use href={`${sprite}#icon-Kitchen`}></use>
@@ -118,10 +114,9 @@ const AdvertItem = ({ camperDetails }) => {
               <p className={css.detailsText}>{beds} beds</p>
             </li>
             <li
-              className={clsx(
-                'detailsItem',
+              className={
                 airConditioner > 0 ? css.detailsItem : css.disableDetailsItem
-              )}
+              }
             >
               <svg width="20" height="20">
                 <use href={`${sprite}#icon-AC`}></use>
