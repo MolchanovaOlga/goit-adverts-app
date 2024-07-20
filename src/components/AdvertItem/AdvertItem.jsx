@@ -17,7 +17,6 @@ const AdvertItem = ({ camperDetails }) => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [isActive, setIsActive] = useState(false);
-  console.log(camperDetails);
 
   const {
     _id,
