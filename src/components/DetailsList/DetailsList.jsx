@@ -40,7 +40,7 @@ const DetailsList = ({ camperDetails }) => {
         </svg>
         <p className={css.detailsText}>{engine}</p>
       </li>
-      <li className={kitchen > 0 ? css.detailsItem : css.disableDetailsItem}>
+      <li className={gas ? css.detailsItem : css.disableDetailsItem}>
         <svg className={css.detailIcon} width="20" height="20">
           <use href={`${sprite}#icon-Gas`}></use>
         </svg>

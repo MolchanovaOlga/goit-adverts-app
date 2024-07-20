@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import ShowMoreBtn from '../ShowMoreBtn/ShowMoreBtn';
@@ -44,10 +44,6 @@ const AdvertItem = ({ camperDetails }) => {
     setIsOpen(false);
     scrollController.enabledScroll();
   }
-
-  // useEffect(() => {
-  //   localStorage.setItem('isActive', isActive);
-  // }, [isActive]);
 
   function handleClick() {
     if (isActive) {
