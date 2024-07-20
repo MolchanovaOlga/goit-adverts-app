@@ -1,6 +1,7 @@
 import css from './SideBar.module.css';
 import sprite from '../../assets/sprite.svg';
 import VehicleEquipment from '../VehicleEquipment/VehicleEquipment';
+import VehicleType from '../VehicleType/VehicleType';
 
 const SideBar = () => {
   return (
@@ -19,8 +20,16 @@ const SideBar = () => {
           />
         </label>
         <h2 className={css.filtersTitle}>Filters</h2>
-        <h3 className={css.title}>Vehicle equipment</h3>
-        <VehicleEquipment />
+        <div className={css.vehicleContainer}>
+          <div className={css.vehicleItem}>
+            <h3 className={css.title}>Vehicle equipment</h3>
+            <VehicleEquipment />
+          </div>
+          <div className={css.vehicleItem}>
+            <h3 className={css.title}>Vehicle type</h3>
+            <VehicleType />
+          </div>
+        </div>
       </form>
     </div>
   );
