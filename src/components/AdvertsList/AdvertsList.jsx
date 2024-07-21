@@ -1,7 +1,7 @@
 import AdvertItem from '../AdvertItem/AdvertItem';
 import css from './AdvertsList.module.css';
 
-const AdvertsList = ({ list }) => {
+const AdvertsList = ({ list, active }) => {
   return (
     <div className={css.listContainer}>
       {list && list.length > 0 ? (
@@ -9,7 +9,7 @@ const AdvertsList = ({ list }) => {
           {list.map(item => {
             return (
               <li className={css.item} key={item._id}>
-                <AdvertItem camperDetails={item} />
+                <AdvertItem camperDetails={item} active={active} />
               </li>
             );
           })}

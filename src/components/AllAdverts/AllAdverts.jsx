@@ -5,16 +5,17 @@ import { useDispatch } from 'react-redux';
 import { selectAdvertsItems } from '../../redux/selectors';
 import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
 import AdvertsList from '../AdvertsList/AdvertsList';
+
 import css from './AllAdverts.module.css';
 import { getAdverts } from '../../redux/operations';
 
 const AllAdverts = () => {
   const dispatch = useDispatch();
 
+  const adverts = useSelector(selectAdvertsItems);
+
   const [perPage, setPerPage] = useState(4);
   const [listAdverts, setListAdverts] = useState([]);
-
-  const adverts = useSelector(selectAdvertsItems);
 
   useEffect(() => {
     dispatch(getAdverts());
@@ -30,8 +31,8 @@ const AllAdverts = () => {
 
   return (
     <div className={css.listAndLoadMoreContainer}>
-      <AdvertsList list={listAdverts} />
-      {listAdverts.length < adverts.length && (
+      <AdvertsList list={listAdverts} active={false} />
+      {listAdverts && adverts && listAdverts.length < adverts.length && (
         <LoadMoreBtn handleClick={handleClick} />
       )}
     </div>

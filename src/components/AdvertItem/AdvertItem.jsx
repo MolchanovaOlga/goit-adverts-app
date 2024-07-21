@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import ShowMoreBtn from '../ShowMoreBtn/ShowMoreBtn';
 import DetailsModal from '../DetailsModal/DetailsModal';
 import GalleryItem from '../GalleryItem/GalleryItem';
+import { selectFavorites } from '../../redux/selectors';
 import { addAdvent, deleteAdvent } from '../../redux/slice.js';
 import scrollController from '../../services/noScroll';
 import css from './AdvertItem.module.css';
@@ -12,7 +14,7 @@ import defaultImage from '../../assets/Toyota_Hilux_illustration.png';
 
 const defaultImg = `${defaultImage}`;
 
-const AdvertItem = ({ camperDetails }) => {
+const AdvertItem = ({ camperDetails, active }) => {
   const dispatch = useDispatch();
 
   const {
@@ -31,9 +33,14 @@ const AdvertItem = ({ camperDetails }) => {
   } = camperDetails;
 
   const { beds, airConditioner, kitchen } = details;
+  const favorites = useSelector(selectFavorites);
 
   const [isOpen, setIsOpen] = useState(false);
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(active);
+
+  useEffect(() => {
+    setIsActive(favorites.some(item => item._id === _id));
+  }, [favorites, _id]);
 
   function openModal() {
     setIsOpen(true);
