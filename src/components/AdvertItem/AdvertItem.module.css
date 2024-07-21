@@ -126,10 +126,22 @@
 .description {
   margin-bottom: 24px;
   text-align: start;
-  width: 525px;
+  width: 320px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .description {
+    width: 456px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .description {
+    width: 525px;
+  }
 }
 
 .detailsList {

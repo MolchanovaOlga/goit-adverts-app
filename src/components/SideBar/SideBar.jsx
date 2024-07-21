@@ -30,6 +30,9 @@ const SideBar = () => {
             <VehicleType />
           </div>
         </div>
+        <button className={css.searchBtn} type="button">
+          Search
+        </button>
       </form>
     </div>
   );
