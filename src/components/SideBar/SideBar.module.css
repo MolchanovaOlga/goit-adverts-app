@@ -1,8 +1,14 @@
 .form {
-  width: 360px;
+  width: 256px;
   display: flex;
   flex-direction: column;
   align-items: start;
+}
+
+@media screen and (min-width: 1440px) {
+  .form {
+    width: 360px;
+  }
 }
 
 .label {

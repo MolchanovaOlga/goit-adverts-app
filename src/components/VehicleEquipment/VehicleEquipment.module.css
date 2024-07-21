@@ -1,18 +1,23 @@
 .detailsList {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-
+  gap: 8px;
   padding: 24px 0 0 0;
   border-top: 1px solid #10182833;
+}
+
+@media screen and (min-width: 1440px) {
+  .detailsList {
+    gap: 10px;
+  }
 }
 
 .detailsItem {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 113px;
-  height: 95px;
+  width: 80px;
+  height: 63px;
   border-radius: 10px;
   border: 1px solid rgba(16, 24, 40, 0.1);
   transition: all 200ms linear;
@@ -21,6 +26,13 @@
 .detailsItem:hover,
 .detailsItem:focus {
   border-color: var(--red);
+}
+
+@media screen and (min-width: 1440px) {
+  .detailsItem {
+    width: 113px;
+    height: 95px;
+  }
 }
 
 .label {
@@ -41,25 +53,52 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 4px;
   position: absolute;
+}
+
+@media screen and (min-width: 1440px) {
+  .inputContainer {
+    gap: 8px;
+  }
 }
 
 .detailIcon {
   fill: transparent;
   stroke: var(--black);
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
+}
+
+@media screen and (min-width: 1440px) {
+  .detailIcon {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .icon {
   fill: var(--black);
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
+}
+
+@media screen and (min-width: 1440px) {
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .checkboxText {
   font-weight: 500;
   text-align: center;
   color: var(--black);
+  font-size: 14px;
+}
+
+@media screen and (min-width: 1440px) {
+  .checkboxText {
+    font-size: 16px;
+  }
 }

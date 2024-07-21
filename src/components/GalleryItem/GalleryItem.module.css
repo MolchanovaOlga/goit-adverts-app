@@ -1,9 +1,23 @@
 .imgContainer {
   overflow: hidden;
   border-radius: 10px;
-  width: 290px;
+  width: 320px;
   height: 310px;
   background-color: var(--light-gray);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .imgContainer {
+    width: 456px;
+    height: 207px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .imgContainer {
+    width: 290px;
+    height: 310px;
+  }
 }
 
 .img {
