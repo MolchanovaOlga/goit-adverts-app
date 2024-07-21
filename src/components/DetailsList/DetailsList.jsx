@@ -35,13 +35,13 @@ const DetailsList = ({ camperDetails }) => {
         <p className={css.detailsText}>{transmission}</p>
       </li>
       <li className={engine ? css.detailsItem : css.disableDetailsItem}>
-        <svg width="20" height="20">
+        <svg className={css.icon} width="20" height="20">
           <use href={`${sprite}#icon-Engine`}></use>
         </svg>
         <p className={css.detailsText}>{engine}</p>
       </li>
       <li className={gas ? css.detailsItem : css.disableDetailsItem}>
-        <svg className={css.detailIcon} width="20" height="20">
+        <svg className={css.icon} width="20" height="20">
           <use href={`${sprite}#icon-Gas`}></use>
         </svg>
         <p className={css.detailsText}>Gas {parseFloat(gas)} kg</p>
@@ -117,7 +117,7 @@ const DetailsList = ({ camperDetails }) => {
         <p className={css.detailsText}>Shower</p>
       </li>
       <li className={toilet > 0 ? css.detailsItem : css.disableDetailsItem}>
-        <svg className={css.detailIcon} width="20" height="20">
+        <svg className={css.icon} width="20" height="20">
           <use href={`${sprite}#icon-Toilet`}></use>
         </svg>
         <p className={css.detailsText}>Toilet</p>

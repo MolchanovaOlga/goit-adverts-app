@@ -19,7 +19,7 @@ const VehicleEquipment = () => {
         <label className={css.label}>
           <input className={css.input} type="checkbox" name="engine" />
           <div className={css.inputContainer}>
-            <svg className={css.detailIcon} width="20" height="20">
+            <svg className={css.icon} width="20" height="20">
               <use href={`${sprite}#icon-Engine`}></use>
             </svg>
             <span className={css.checkboxText}>Petrol</span>
@@ -30,7 +30,7 @@ const VehicleEquipment = () => {
         <label className={css.label}>
           <input className={css.input} type="checkbox" name="gas" />
           <div className={css.inputContainer}>
-            <svg className={css.detailIcon} width="20" height="20">
+            <svg className={css.icon} width="20" height="20">
               <use href={`${sprite}#icon-Gas`}></use>
             </svg>
             <span className={css.checkboxText}>Gas</span>
@@ -162,7 +162,7 @@ const VehicleEquipment = () => {
         <label className={css.label}>
           <input className={css.input} type="checkbox" name="toilet" />
           <div className={css.inputContainer}>
-            <svg className={css.detailIcon} width="20" height="20">
+            <svg className={css.icon} width="20" height="20">
               <use href={`${sprite}#icon-Toilet`}></use>
             </svg>
             <span className={css.checkboxText}>Toilet</span>

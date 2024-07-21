@@ -31,3 +31,7 @@
 .detailsText::first-letter {
   text-transform: uppercase;
 }
+
+.icon {
+  fill: var(--black);
+}
