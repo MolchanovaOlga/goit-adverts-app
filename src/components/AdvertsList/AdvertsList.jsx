@@ -1,3 +1,5 @@
+import { selectAdvertsLoading } from '../../redux/selectors';
+import Loader from '../Loader/Loader';
 import AdvertItem from '../AdvertItem/AdvertItem';
 import css from './AdvertsList.module.css';
 

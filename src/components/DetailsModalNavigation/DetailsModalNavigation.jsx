@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-import { Suspense } from 'react';
-import { NavLink, Route, Routes } from 'react-router-dom';
 import FeaturesDetails from '../FeaturesDetails/FeaturesDetails';
 import ReviewsDetails from '../ReviewsDetails/ReviewsDetails';
 import css from './DetailsModalNavigation.module.css';
@@ -43,30 +41,6 @@ const DetailsModalNavigation = ({ camperDetails }) => {
           <ReviewsDetails reviewsDetails={camperDetails.reviews} />
         )}
       </div>
-      {/* <div className={css.linkContainer}>
-        <NavLink className={css.link} to={'features'}>
-          Features
-        </NavLink>
-        <NavLink className={css.link} to={'reviews'}>
-          Reviews
-        </NavLink>
-      </div>
-      <div className={css.routesContainer}>
-        <Suspense>
-          <Routes>
-            <Route
-              path="features"
-              element={<FeaturesDetails camperDetails={camperDetails} />}
-            />
-            <Route
-              path="reviews"
-              element={
-                <ReviewsDetails reviewsDetails={camperDetails.reviews} />
-              }
-            />
-          </Routes>
-        </Suspense>
-      </div> */}
     </>
   );
 };

@@ -1,9 +1,6 @@
-.Container {
+.navContainer {
   display: flex;
   gap: 40px;
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--black);
   border-bottom: 1px solid rgba(16, 24, 40, 0.2);
   padding-bottom: 24px;
 }
@@ -11,11 +8,17 @@
 .navigate {
   position: relative;
   background-color: transparent;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--black);
 }
 
 .navigateActive {
   position: relative;
   background-color: transparent;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--black);
 }
 
 .navigateActive::after {

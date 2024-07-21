@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 
+import { selectAdvertsLoading } from '../../redux/selectors';
+import Loader from '../Loader/Loader';
 import { selectFavorites } from '../../redux/selectors';
 import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
 import AdvertsList from '../AdvertsList/AdvertsList';
@@ -11,6 +13,7 @@ const FavoritsList = () => {
   const [listAdverts, setListAdverts] = useState([]);
 
   const favorites = useSelector(selectFavorites);
+  const loader = useSelector(selectAdvertsLoading);
 
   useEffect(() => {
     setListAdverts(favorites.slice(0, perPage));
@@ -22,8 +25,9 @@ const FavoritsList = () => {
 
   return (
     <div className={css.listAndLoadMoreContainer}>
-      <AdvertsList list={listAdverts} active={true} />
-      {listAdverts.length < favorites.length && (
+      {loader && <Loader />}
+      {!loader && <AdvertsList list={listAdverts} active={true} />}
+      {!loader && listAdverts.length < favorites.length && (
         <LoadMoreBtn handleClick={handleClick} />
       )}
     </div>

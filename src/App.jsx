@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Container from './components/Container/Container';
 import Navigation from './components/Navigation/Navigation';
+import Loader from './components/Loader/Loader';
 import './App.css';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -13,7 +14,7 @@ function App() {
     <Container>
       <Navigation />
       <main>
-        <Suspense>
+        <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/catalog" element={<CatalogPage />} />
