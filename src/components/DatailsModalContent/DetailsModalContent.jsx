@@ -5,23 +5,8 @@ import sprite from '../../assets/sprite.svg';
 import GalleryItem from '../GalleryItem/GalleryItem';
 
 const DetailsModalContent = ({ camperDetails }) => {
-  const {
-    gallery,
-    name,
-    price,
-    rating,
-    reviews,
-    location,
-    description,
-    adults,
-    transmission,
-    engine,
-    details,
-  } = camperDetails;
-
-  const { beds, airConditioner, kitchen } = details;
-
-  const camperPrice = price.toFixed(2);
+  const { gallery, name, price, rating, reviews, location, description } =
+    camperDetails;
 
   return (
     <div className={css.container}>
@@ -42,7 +27,9 @@ const DetailsModalContent = ({ camperDetails }) => {
           <p>{location}</p>
         </div>
       </div>
-      <p className={css.priceText}>€{camperPrice}</p>
+      <p className={css.priceText}>
+        €{price.toFixed(2).toString().replace('.', ',')}
+      </p>
       {gallery && gallery.length > 0 ? (
         <ul className={css.imgList}>
           {gallery.map(item => {

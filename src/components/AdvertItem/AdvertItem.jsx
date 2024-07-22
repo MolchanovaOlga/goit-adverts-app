@@ -80,7 +80,7 @@ const AdvertItem = ({ camperDetails, active }) => {
           <div className={css.titleContainer}>
             <h2 className={css.title}>{name}</h2>
             <div className={css.priceContainer}>
-              <p>€{price.toFixed(2)}</p>
+              <p>€{price.toFixed(2).toString().replace('.', ',')}</p>
               <button
                 className={css.heartBtn}
                 type="button"
