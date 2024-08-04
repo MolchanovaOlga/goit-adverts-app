@@ -1,9 +1,8 @@
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 
-import { selectAdvertsLoading } from '../../redux/selectors';
 import Loader from '../Loader/Loader';
-import { selectFavorites } from '../../redux/selectors';
+import { selectFavorites, selectAdvertsLoading } from '../../redux/selectors';
 import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
 import AdvertsList from '../AdvertsList/AdvertsList';
 import css from './FavoritsList.module.css';

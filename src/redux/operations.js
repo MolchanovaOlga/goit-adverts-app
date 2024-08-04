@@ -1,12 +1,21 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { getAllCampers, getCamperById } from '../services/advertsApi';
+import {
+  getAllCampers,
+  getLimitCampers,
+  getCamperById,
+} from '../services/advertsApi';
 
 export const getAdverts = createAsyncThunk(
-  'adverts/getAll',
-  async (_, thunkAPI) => {
+  'adverts/getLimits',
+  async ({ page, perPage }, thunkAPI) => {
     try {
-      const data = await getAllCampers();
-      return data;
+      const data = await getLimitCampers({ page, perPage });
+      const { length } = await getAllCampers();
+
+      const loadMore =
+        length > perPage && page < length / perPage ? true : false;
+
+      return { data, loadMore };
     } catch (err) {
       console.log(err);
       return thunkAPI.rejectWithValue(err.message);

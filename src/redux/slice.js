@@ -16,6 +16,9 @@ const advertsSlice = createSlice({
   initialState: {
     items: [],
     favorites: [],
+    page: 1,
+    perPage: 4,
+    loadMore: false,
     loading: false,
     error: null,
   },
@@ -28,17 +31,22 @@ const advertsSlice = createSlice({
         advent => advent._id !== action.payload
       );
     },
+    setPage(state, action) {
+      state.page = action.payload;
+    },
   },
   extraReducers: builder => {
     builder
       .addCase(getAdverts.pending, handlePending)
       .addCase(getAdverts.fulfilled, (state, action) => {
         state.loading = false;
-        state.items = action.payload;
+        state.items = [...state.items, ...action.payload.data];
+        state.loadMore = action.payload.loadMore;
+        // state.items = action.payload;
       })
       .addCase(getAdverts.rejected, handleRejected);
   },
 });
 
 export const advertsReducer = advertsSlice.reducer;
-export const { addAdvent, deleteAdvent } = advertsSlice.actions;
+export const { addAdvent, deleteAdvent, setPage } = advertsSlice.actions;

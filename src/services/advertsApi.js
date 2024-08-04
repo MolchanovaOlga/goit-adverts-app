@@ -15,6 +15,17 @@ export const getAllCampers = async () => {
   }
 };
 
+export const getLimitCampers = async ({ page, perPage }) => {
+  try {
+    const results = await instance.get(
+      `/adverts?page=${page}&limit=${perPage}`
+    );
+    return results.data;
+  } catch (er) {
+    console.log(er);
+  }
+};
+
 export const getCamperById = async id => {
   try {
     const results = await instance.get(`/adverts/${id}`);
