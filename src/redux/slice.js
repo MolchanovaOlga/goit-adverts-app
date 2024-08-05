@@ -34,6 +34,11 @@ const advertsSlice = createSlice({
     setPage(state, action) {
       state.page = action.payload;
     },
+    resetAdverts(state) {
+      state.items = [];
+      state.page = 1;
+      state.loadMore = false;
+    },
   },
   extraReducers: builder => {
     builder
@@ -49,4 +54,5 @@ const advertsSlice = createSlice({
 });
 
 export const advertsReducer = advertsSlice.reducer;
-export const { addAdvent, deleteAdvent, setPage } = advertsSlice.actions;
+export const { addAdvent, deleteAdvent, setPage, resetAdverts } =
+  advertsSlice.actions;

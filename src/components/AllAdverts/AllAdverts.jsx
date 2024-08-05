@@ -9,7 +9,7 @@ import {
   selectLoadMore,
   selectPage,
 } from '../../redux/selectors';
-import { setPage } from '../../redux/slice.js';
+import { setPage, resetAdverts } from '../../redux/slice.js';
 import { getAdverts } from '../../redux/operations';
 import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
 import AdvertsList from '../AdvertsList/AdvertsList';
@@ -26,8 +26,6 @@ const AllAdverts = () => {
   const loadMore = useSelector(selectLoadMore);
   const loader = useSelector(selectAdvertsLoading);
 
-  // const prevPage = useRef(page);
-
   useEffect(() => {
     if (isInitialMount.current) {
       isInitialMount.current = false;
@@ -40,6 +38,13 @@ const AllAdverts = () => {
   const handleClick = () => {
     dispatch(setPage(page + 1));
   };
+
+  // Скидання стану при розмонтуванні компонента для запобігання дублювання даних при поверненні на сторінку
+  useEffect(() => {
+    return () => {
+      dispatch(resetAdverts());
+    };
+  }, [dispatch]);
 
   return (
     <div className={css.listAndLoadMoreContainer}>
